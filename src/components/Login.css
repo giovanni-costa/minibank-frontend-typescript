@@ -1,16 +1,15 @@
-
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: #303030;
     color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 300;
     box-sizing: border-box;
-  }
-  
-  .login-ui {
+}
+
+.login-ui {
     margin: 5rem;
     display: grid;
     text-align: center;
@@ -19,13 +18,13 @@ body{
     min-height: 100vh;
     grid-template-columns: repeat(1, 300px);
     grid-template-rows: repeat(4, 60px);
-  }
-  
-  .login-ui > h1 {
+}
+
+.login-ui > h1 {
     margin: 5px;
-  }
-  
-  .login-ui > input {
+}
+
+.login-ui > input {
     background: #303030;
     justify-content: center;
     border: 2px solid white;
@@ -36,10 +35,10 @@ body{
     padding: 10px;
     margin: 5px;
     font-size: 1rem;
-  }
-  
-  .login-ui > button {
-    background:rgb(0, 200, 0);
+}
+
+.login-ui > button {
+    background: rgb(0, 200, 0);
     justify-content: center;
     border: none;
     outline: none;
@@ -50,4 +49,4 @@ body{
     margin: 5px;
     font-size: 1.2rem;
     cursor: pointer;
-  }
+}
