@@ -6,7 +6,19 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { useState } from "react";
 
 function App() {
-    const [jwtToken, setJwtToken] = useState();
+    const emptyJWT = {
+        token: "",
+        data: {
+            sub: "",
+            id: "",
+            amount: "",
+            role: "",
+            iat: 0,
+            exp: 0,
+        },
+    };
+
+    const [jwtToken, setJwtToken] = useState(emptyJWT);
 
     return (
         <Routes>

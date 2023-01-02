@@ -35,7 +35,7 @@ export default function TransferUI(props: {
             });
 
             const myJSON = {
-                sender: props.userInfo.id,
+                sender: props.userInfo?.id,
                 receiver: receiverID,
                 value: Amount,
             };
@@ -62,7 +62,7 @@ export default function TransferUI(props: {
 
             props.onChangeBalance(userInfoObj);
         } catch (error) {
-            alert(error);
+            console.log(error);
         }
     }
 
