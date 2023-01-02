@@ -1,0 +1,134 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #303030;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    box-sizing: border-box;
+  }
+  
+  .home-ui {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(11, auto);
+  }
+  
+  .home-ui > button {
+    background:#5b7a81;
+      justify-content: center;
+    border: none;
+      outline: none;
+      border-radius: 20px;
+    color: white;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    grid-column: span 2;
+  }
+  
+  .home-ui > button:hover {
+    background:#81acb6;
+  }
+
+  .welcome-ui {
+    display: grid;
+    justify-content: left;
+    text-align: left;
+    background-color: #838383;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 1.4rem;
+    font-weight: 650;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-template-columns: repeat(1, 400px);
+    grid-template-rows: repeat(2, 40px);
+    grid-column: span 2;
+  
+  }
+  
+  .transfer {
+    display: grid;
+    justify-content: left;
+    text-align: left;
+    background-color: #adadad;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: large;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    grid-template-columns: repeat(1, 350px);
+    grid-template-rows: repeat(3, auto);
+    grid-column: 2;
+    grid-row: span 3;
+  }
+  
+  .transfer > input {
+    background: #303030;
+      justify-content: center;
+    border: 2px solid white;
+      outline: none;
+      border-radius: 10px;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    font-size: 1rem;
+  }
+  
+  .transfer > button {
+    background:rgb(0, 150, 0);
+      justify-content: center;
+    border: none;
+      outline: none;
+      border-radius: 10px;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .negative {
+    color: rgb(150, 0, 0)
+  }
+  
+  .positive {
+    color: rgb(1, 129, 1);
+  }
+  
+  .last-transfers {
+    display: grid;
+    justify-content: left;
+    text-align: left;
+    background-color: #838383;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(10, auto);
+    grid-column: 1;
+    grid-row: span 10;
+  
+  }
+  
+  .transfer-card {
+    padding: 10px;
+  }
