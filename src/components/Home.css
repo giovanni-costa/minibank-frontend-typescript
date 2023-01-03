@@ -41,7 +41,7 @@ body {
     display: grid;
     justify-content: left;
     text-align: left;
-    background-color: #838383;
+    background-color: #416191;
     border-radius: 20px;
     padding: 15px;
     font-size: larger;
@@ -104,7 +104,7 @@ body {
 }
 
 .transfer > button {
-    background: rgb(0, 150, 0);
+    background: #395d92;
     justify-content: center;
     border: none;
     outline: none;
@@ -114,15 +114,16 @@ body {
     padding: 10px;
     margin: 5px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .negative {
-    color: rgb(150, 0, 0);
+    color: rgb(170, 0, 0);
     font-weight: bold;
 }
 
 .positive {
-    color: rgb(0, 170, 0);
+    color: #395d92;
     font-weight: bold;
 }
 
@@ -130,7 +131,7 @@ body {
     display: grid;
     justify-content: left;
     text-align: left;
-    background-color: #cecece;
+    background-color: #94a6be;
     color: black;
     border-radius: 20px;
     padding: 15px;
