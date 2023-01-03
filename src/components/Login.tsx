@@ -3,9 +3,9 @@ import axios from "axios";
 import { API_URL } from "../main";
 import "../components/Login.css";
 import { useNavigate } from "react-router-dom";
-import { JwtToken } from "../types/project_types";
+import { LoginUIProps } from "../types/props";
 
-export default function LoginUI(props: { setToken: (arg0: JwtToken) => void }) {
+export default function LoginUI({ setToken }: LoginUIProps) {
     const [UserCPF, setCPF] = useState("");
     const [UserPwd, setPwd] = useState("");
     const navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function LoginUI(props: { setToken: (arg0: JwtToken) => void }) {
             );
 
             if (response.data) {
-                props.setToken(response.data);
+                setToken(response.data);
                 navigate("/home");
             }
         } catch (error) {

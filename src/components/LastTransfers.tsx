@@ -2,18 +2,19 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_URL } from "../main";
 import TransfersCard from "./TransferCard";
-import { TransferObj, TokenData } from "../types/project_types";
+import { TransferObj } from "../types/project_types";
+import { LastTransferProps } from "../types/props";
 
-export default function LastTransfers(props: {
-    userInfo: TokenData;
-    hashToken: string;
-}) {
+export default function LastTransfers({
+    userInfo,
+    hashToken,
+}: LastTransferProps) {
     let records: JSX.Element[] = [];
     const [lastTransfers, setTransfers] = useState(records);
 
     useEffect(() => {
         fetchData();
-    }, [props.userInfo]);
+    }, [userInfo]);
 
     async function fetchData() {
         try {
@@ -22,21 +23,21 @@ export default function LastTransfers(props: {
                 timeout: 10000,
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${props.hashToken}`,
+                    Authorization: `Bearer ${hashToken}`,
                 },
             });
 
-            const res = await api.get(`transfers/${props.userInfo.id}`);
+            const res = await api.get(`transfers/${userInfo.id}`);
             // console.log(res.data)
 
             res.data.forEach((element: TransferObj) => {
                 const peer =
-                    element.sender !== props.userInfo.id
+                    element.sender !== userInfo.id
                         ? `From: ${element.sender}`
                         : `To: ${element.receiver}`;
 
                 const transfer =
-                    element.receiver === props.userInfo.id
+                    element.receiver === userInfo.id
                         ? parseFloat(element.value)
                         : -parseFloat(element.value);
 

@@ -1,6 +1,6 @@
 import { Outlet, Navigate } from "react-router-dom";
-import { JwtToken } from "../types/project_types";
+import { ProtectedRouteProps } from "../types/props";
 
-export default function ProtectedRoute(props: { token: JwtToken }) {
-    return props.token.token !== "" ? <Outlet /> : <Navigate to="/"></Navigate>;
+export default function ProtectedRoute({ token }: ProtectedRouteProps) {
+    return token.token !== "" ? <Outlet /> : <Navigate to="/"></Navigate>;
 }

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { API_URL } from "../main";
-import { TokenData } from "../types/project_types";
+import { MakeTransferProps } from "../types/props";
 
-export default function TransferUI(props: {
-    userInfo: TokenData;
-    hashToken: string;
-    onChangeBalance: (arg0: TokenData) => void;
-}) {
+export default function TransferUI({
+    userInfo,
+    hashToken,
+    onChangeBalance,
+}: MakeTransferProps) {
     const [receiverID, setID] = useState("");
     const [Amount, setAmount] = useState("0");
     const [Password, setPassword] = useState("");
@@ -30,12 +30,12 @@ export default function TransferUI(props: {
                 timeout: 10000,
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Bearer ${props.hashToken}`,
+                    Authorization: `Bearer ${hashToken}`,
                 },
             });
 
             const myJSON = {
-                sender: props.userInfo?.id,
+                sender: userInfo?.id,
                 receiver: receiverID,
                 value: Amount,
             };
@@ -52,15 +52,15 @@ export default function TransferUI(props: {
             setPassword("");
 
             const userInfoObj = {
-                ...props.userInfo,
+                ...userInfo,
                 ...{
                     amount: (
-                        parseFloat(props.userInfo.amount) - parseFloat(Amount)
+                        parseFloat(userInfo.amount) - parseFloat(Amount)
                     ).toString(),
                 },
             };
 
-            props.onChangeBalance(userInfoObj);
+            onChangeBalance(userInfoObj);
         } catch (error) {
             console.log(error);
         }

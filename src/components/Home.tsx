@@ -3,11 +3,11 @@ import WelcomeCard from "./Welcome";
 import LastTransfers from "./LastTransfers";
 import TransferUI from "./MakeTransfer";
 import "./Home.css";
-import { JwtToken } from "../types/project_types";
+import { HomeUIProps } from "../types/props";
 
-export default function HomeUI(props: { token: JwtToken }) {
-    const hashToken = props.token.token;
-    const [userInfo, setUserInfo] = useState(props.token.data);
+export default function HomeUI({ token }: HomeUIProps) {
+    const hashToken = token.token;
+    const [userInfo, setUserInfo] = useState(token.data);
 
     return (
         <div className="home-ui">

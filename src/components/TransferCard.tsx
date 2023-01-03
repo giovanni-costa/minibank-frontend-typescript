@@ -1,16 +1,14 @@
 import React from "react";
 import { formatBalance, classColor } from "../util_functions";
+import { TransferCardProps } from "../types/props";
 
-export default function TransfersCard(props: {
-    peer: string;
-    transfer: number;
-}) {
+export default function TransfersCard({ peer, transfer }: TransferCardProps) {
     return (
         <div className="transfer-card">
-            <div>{props.peer}</div>
+            <div>{peer}</div>
 
-            <div className={classColor(props.transfer.toString())}>
-                {formatBalance.format(props.transfer)}
+            <div className={classColor(transfer.toString())}>
+                {formatBalance.format(transfer)}
             </div>
         </div>
     );

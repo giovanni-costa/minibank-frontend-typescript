@@ -1,22 +1,22 @@
 import React from "react";
 import { formatBalance } from "../util_functions";
-import { TokenData } from "../types/project_types";
 import CopyToClipboard from "react-copy-to-clipboard";
+import { WelcomeCardProps } from "../types/props";
 
-export default function WelcomeCard(props: { userInfo: TokenData }) {
+export default function WelcomeCard({ userInfo }: WelcomeCardProps) {
     return (
         <div className="welcome-ui">
-            <div>Welcome, {props.userInfo.sub}</div>
+            <div>Welcome, {userInfo.sub}</div>
 
-            <CopyToClipboard text={props.userInfo.id}>
+            <CopyToClipboard text={userInfo.id}>
                 <div className="clipboard-id">
-                    {props.userInfo.id}
+                    {userInfo.id}
                     <button>📋</button>
                 </div>
             </CopyToClipboard>
 
-            <div key={props.userInfo.amount}>
-                {formatBalance.format(parseFloat(props.userInfo.amount))}
+            <div key={userInfo.amount}>
+                {formatBalance.format(parseFloat(userInfo.amount))}
             </div>
         </div>
     );
