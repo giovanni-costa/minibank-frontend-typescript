@@ -1,4 +1,4 @@
-import { JwtToken, TokenData } from "./project_types";
+import { JwtToken, TokenData, TransferObj } from "./project_types";
 
 export interface ProtectedRouteProps {
     token: JwtToken;
@@ -28,6 +28,6 @@ export interface MakeTransferProps {
 }
 
 export interface TransferCardProps {
-    peer: string;
-    transfer: number;
+    data: TransferObj;
+    user: string;
 }

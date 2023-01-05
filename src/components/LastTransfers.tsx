@@ -31,19 +31,24 @@ export default function LastTransfers({
             // console.log(res.data)
 
             res.data.forEach((element: TransferObj) => {
-                const peer =
-                    element.sender !== userInfo.id
-                        ? `From: ${element.sender}`
-                        : `To: ${element.receiver}`;
+                // const peer =
+                //     element.sender !== userInfo.id
+                //         ? `From: ${element.sender}`
+                //         : `To: ${element.receiver}`;
 
-                const transfer =
-                    element.receiver === userInfo.id
-                        ? parseFloat(element.value)
-                        : -parseFloat(element.value);
+                // const peerName =
+                //     element.sender !== userInfo.id
+                //         ? `From: ${element.senderName}`
+                //         : `To: ${element.receiverName}`;
+
+                // const transfer =
+                //     element.receiver === userInfo.id
+                //         ? parseFloat(element.value)
+                //         : -parseFloat(element.value);
 
                 records.push(
                     <li key={element.id}>
-                        <TransfersCard peer={peer} transfer={transfer} />
+                        <TransfersCard data={element} user={userInfo.id} />
                     </li>
                 );
             });

@@ -15,7 +15,9 @@ export type JwtToken = {
 export type TransferObj = {
     id: string;
     sender: string;
+    senderName: string;
     receiver: string;
+    receiverName: string;
     value: string;
     date: string;
 };
